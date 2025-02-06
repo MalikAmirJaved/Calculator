@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./src/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body{
+            background-image: url(bg.png);
+            background-color: #F8FAFC;
+            /* background-color: white; */
+        }
+    </style>
+   
+</head>
+<body>
+    <div id="maindiv" class="min-h-screen flex flex-col ">
+        <div id="head" class="py-6 text-[#1E293B] bg-[#FFFFFF] flex justify-center font-bold text-lg drop-shadow-[0_5px_5px_rgba(0,0,0,0.1)] px-14 text-center">
+            <p>Calculate - Tailwind CSS Working Calculator Template</p>
+        </div>
+        <div id="main" class=" min-[500px]:justify-center min-[400px]:justify-center pl-4 py-20 flex flex-1 items-center h-full relative">
+            <div id="floatingbtn" class="absolute top-0 min-[500px]:mt-44 right-0 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                <div id="colorbtn" class="w-10 h-20 bg-[#0F172A] flex justify-center rounded-full py-1 relative cursor-pointer ">
+                    <div id="ballmove" class="w-8 h-8 rounded-full bg-white z-50 transition-all translate-y-10 duration-200"></div>
+                    <i class="fa-solid fa-moon absolute top-2 text-[#86753f]"></i>
+                    <i class="fa-regular fa-sun absolute bottom-2 text-[#E2AD09]"></i>
+                </div>
+                <div id="align" class="rotate-270 text-xl font-bold text-[#1E293B] bg-[#FFFFFF] mt-6 px-2 rounded-sm cursor-pointer">
+                    <span id="ltr" class="hidden">LTR</span>
+                    <span id="rtl">RTL</span>
+                </div>
+            </div>
+            <div id="calbody" class="min-[500px]:w-78 w-60 h-[530px] bg-[#FFFFFF] px-4 py-3 rounded-md mt-10 drop-shadow-[0_5px_5px_rgba(0,0,0,0.2)]">
+                <div class="w-full">
+                    <input id="textbox" type="text" placeholder="0" class="text-[#1E293B] bg-[#F8FAFC] w-full px-3 py-4 text-2xl rounded-md text-right focus:outline-2 focus:outline-[#FFFFFF]">
+                </div>
+                <div class="w-full text-2xl mt-4 font-bold flex justify-center">
+                    <div class="flex">
+                        <ul id="col1" class="text-[#1E293B] space-y-4 w-full order-1 min-[500px]:px-2 px-2">
+                            <li class="btn opt w-14 h-14 flex justify-center items-center bg-[#F8FAFC] rounded-full text-xl drop-shadow-[0_5px_5px_rgba(0,0,0,0.1)] hover:bg-[#dfe8f1] cursor-pointer">AC</li>
+                            <li class="btn opt w-14 h-14 flex justify-center items-center bg-[#F8FAFC] rounded-full drop-shadow-[0_5px_5px_rgba(0,0,0,0.1)] hover:bg-[#dfe8f1] cursor-pointer">*</li>
+                            <li class="btn num w-14 h-14 flex justify-center items-center bg-white rounded-full drop-shadow-[0_5px_5px_rgba(0,0,0,0.1)] hover:bg-[#dfe8f1] cursor-pointer">7</li>
+                            <li class="btn num w-14 h-14 flex justify-center items-center bg-white rounded-full drop-shadow-[0_5px_5px_rgba(0,0,0,0.1)] hover:bg-[#dfe8f1] cursor-pointer">4</li>
+                            <li class="btn num w-14 h-14 flex justify-center items-center bg-white rounded-full drop-shadow-[0_5px_5px_rgba(0,0,0,0.1)] hover:bg-[#dfe8f1] cursor-pointer">1</li>
+                            <li class="btn num w-14 h-14 flex justify-center items-center bg-white rounded-full drop-shadow-[0_5px_5px_rgba(0,0,0,0.1)] hover:bg-[#dfe8f1] cursor-pointer">0</li>
+                        </ul>
+                        <ul id="col2" class="text-[#1E293B] space-y-4 w-full order-2 min-[500px]:px-5 px-2">
+                            <li class="btn opt w-14 h-14 flex justify-center items-center bg-[#F8FAFC] rounded-full font-extrabold drop-shadow-[0_5px_5px_rgba(0,0,0,0.1)] hover:bg-[#dfe8f1] cursor-pointer">+</li>
+                            <li class="btn opt w-14 h-14 flex justify-center items-center bg-[#F8FAFC] rounded-full text-xl drop-shadow-[0_5px_5px_rgba(0,0,0,0.1)] hover:bg-[#dfe8f1] cursor-pointer">/</li>
+                            <li class="btn num w-14 h-14 flex justify-center items-center bg-white rounded-full drop-shadow-[0_5px_5px_rgba(0,0,0,0.1)] hover:bg-[#dfe8f1] cursor-pointer">8</li>
+                            <li class="btn num w-14 h-14 flex justify-center items-center bg-white rounded-full drop-shadow-[0_5px_5px_rgba(0,0,0,0.1)] hover:bg-[#dfe8f1] cursor-pointer">5</li>
+                            <li class="btn num w-14 h-14 flex justify-center items-center bg-white rounded-full drop-shadow-[0_5px_5px_rgba(0,0,0,0.1)] hover:bg-[#dfe8f1] cursor-pointer">2</li>
+                            <li class="btn num w-14 h-14 flex justify-center items-center bg-white rounded-full drop-shadow-[0_5px_5px_rgba(0,0,0,0.1)] hover:bg-[#dfe8f1] cursor-pointer">00</li>
+                            
+                        </ul>
+                        <ul id="col3" class="text-[#1E293B] space-y-4 w-full order-3 min-[500px]:px-5 px-2">
+                            <li class="btn opt w-14 h-14 flex justify-center pt-2 bg-[#F8FAFC] rounded-full drop-shadow-[0_5px_5px_rgba(0,0,0,0.1)] hover:bg-[#dfe8f1] cursor-pointer">-</li>
+                            <li class="btn opt w-14 h-14 flex justify-center pt-1 bg-[#F8FAFC] rounded-full drop-shadow-[0_5px_5px_rgba(0,0,0,0.1)] hover:bg-[#dfe8f1] cursor-pointer">.</li>
+                            <li class="btn num  w-14 h-14 flex justify-center items-center bg-white rounded-full drop-shadow-[0_5px_5px_rgba(0,0,0,0.1)] hover:bg-[#dfe8f1] cursor-pointer">9</li>
+                            <li class="btn num  w-14 h-14 flex justify-center items-center bg-white rounded-full drop-shadow-[0_5px_5px_rgba(0,0,0,0.1)] hover:bg-[#dfe8f1] cursor-pointer">6</li>
+                            <li class="btn num  w-14 h-14 flex justify-center items-center bg-white rounded-full drop-shadow-[0_5px_5px_rgba(0,0,0,0.1)] hover:bg-[#dfe8f1] cursor-pointer">3</li>
+                            <li class="btn equal w-14 h-14 flex justify-center items-center bg-[#DC2626] rounded-full drop-shadow-[0_5px_5px_rgba(0,0,0,0.3)] hover:bg-[#dc2626e5] cursor-pointer">=</li>
+                            
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div id="footer" class="py-6 text-[#888F9C] bg-[#0F172A] justify-evenly font-bold text-[16px] lg:flex-row flex flex-col px-10 space-y-3 text-center">
+            <div class="w-full">
+                <i class="fa-regular fa-copyright"></i> 2025 Calculate. Recreate By <a id="name" href="https://www.linkedin.com/in/amir-javed-a9274b281/" target="_blank" class="transition-all hover:scale-150 inline-block hover:translate-x-10 duration-300 ease-in-out hover:text-[#0A66C2]">Amir Javed Malik <span id="dot">.</span></a>
+            </div>
+            <div class="space-x-1 text-[16px] space-y-3 w-full">
+                <i class="fa-solid fa-cart-shopping outline-1 outline-[#374151] p-2 rounded-sm hover:bg-[#4c596e]"></i>
+                <i class="fa-solid fa-globe outline-1 outline-[#374151] p-2 rounded-sm hover:bg-[#374151]"></i>
+                <i class="fa-brands fa-linkedin outline-1 outline-[#374151] p-2 rounded-sm hover:bg-[#374151]"></i>
+                <i class="fa-brands fa-square-facebook outline-1 outline-[#374151] p-2 rounded-sm hover:bg-[#374151]"></i>
+                <i class="fa-brands fa-instagram outline-1 outline-[#374151] p-2 rounded-sm hover:bg-[#374151]"></i>
+                <i class="fa-brands fa-twitter outline-1 outline-[#374151] p-2 rounded-sm hover:bg-[#374151]"></i>
+                <i class="fa-regular fa-envelope outline-1 outline-[#374151] p-2 rounded-sm hover:bg-[#374151]"></i>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let colorbtn = document.getElementById('colorbtn');
+        let ballmove = document.getElementById('ballmove');
+        let head = document.getElementById('head');
+        let calbody = document.getElementById('calbody');
+        let ltr = document.getElementById('ltr');
+        let rtl = document.getElementById('rtl');
+        let align = document.getElementById('align');
+        let textbox = document.getElementById('textbox');
+        let buttons = document.querySelectorAll('.btn');
+        let opt = document.querySelectorAll('.opt');
+        let num = document.querySelectorAll('.num');
+        let dot = document.getElementById('dot');
+        let name = document.getElementById('name');
+        let floatingbtn = document.getElementById('floatingbtn');
+        let footer = document.getElementById('footer')
+
+        name.addEventListener('mouseenter', ()=>{
+            dot.classList.add('hidden');
+        });
+        name.addEventListener('mouseleave', ()=>{
+            dot.classList.remove('hidden');
+        })
+
+        // Theme Change (Dark Mode % Light Mode)
+        colorbtn.addEventListener('click', ()=>{
+            
+            if(ballmove.classList.contains('translate-y-10')){
+                document.body.style.backgroundColor = '#1E293B';
+                ballmove.classList.remove('translate-y-10');
+                ballmove.classList.add('translate-y-0');
+                head.classList.remove('bg-[#FFFFFF]','text-[#0F172A]', 'drop-shadow-[0_5px_5px_rgba(0,0,0,0.1)]');
+                head.classList.add('bg-[#0F172A]','text-[#FFFFFF]', 'drop-shadow-[0_5px_5px_rgba(255,255,255,0.1)]');
+                calbody.classList.remove('bg-[#FFFFFF]');
+                calbody.classList.add('bg-[#0F172A]');
+                textbox.classList.remove('bg-[#F8FAFC]', 'text-[#1E293B]');
+                textbox.classList.add('bg-[#1E293B]', 'text-white');
+                colorbtn.classList.remove('bg-[#0F172A]');
+                colorbtn.classList.add('bg-white');
+                ballmove.classList.remove('bg-white');
+                ballmove.classList.add('bg-[#0F172A]');
+                floatingbtn.classList.remove('drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]');
+                floatingbtn.classList.add('drop-shadow-[0_2px_4px_rgba(255,255,255,0.8)]');
+                opt.forEach(operator => {
+                    operator.classList.remove('bg-[#F8FAFC]', 'text-[#1E293B]', 'drop-shadow-[0_5px_5px_rgba(0,0,0,0.1)]', 'hover:bg-[#dfe8f1]');
+                    operator.classList.add('bg-[#1E293B]', 'text-white', 'drop-shadow-[0_5px_5px_rgba(255,255,255,0.1)]', 'hover:bg-[#233044]');
+                });
+                num.forEach(number => {
+                    number.classList.remove('bg-white', 'text-[#1E293B]', 'drop-shadow-[0_5px_5px_rgba(0,0,0,0.1)]', 'hover:bg-[#dfe8f1]');
+                    number.classList.add('bg-[#0F172A]', 'text-white', 'drop-shadow-[0_5px_5px_rgba(255,255,255,0.1)]', 'hover:bg-[#141f38]');
+                });
+
+            }
+            else{
+                document.body.style.backgroundColor = '#F8FAFC';
+                ballmove.classList.remove('translate-y-0');
+                ballmove.classList.add('translate-y-10');
+                head.classList.remove('bg-[#0F172A]','text-[#FFFFFF]', 'drop-shadow-[0_5px_5px_rgba(255,255,255,0.1)]');
+                head.classList.add('bg-[#FFFFFF]','text-[#0F172A]', 'drop-shadow-[0_5px_5px_rgba(0,0,0,0.1)]');
+                calbody.classList.add('bg-[#FFFFFF]');
+                calbody.classList.remove('bg-[#0F172A]');
+                textbox.classList.add('bg-[#F8FAFC]', 'text-[#1E293B]');
+                textbox.classList.remove('bg-[#1E293B]', 'text-white');
+                colorbtn.classList.add('bg-[#0F172A]', 'drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]');
+                colorbtn.classList.remove('bg-white', 'drop-shadow-[0_2px_4px_rgba(255,255,255,0.8)]');
+                ballmove.classList.add('bg-white');
+                ballmove.classList.remove('bg-[#0F172A]');
+                floatingbtn.classList.add('drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]');
+                floatingbtn.classList.remove('drop-shadow-[0_2px_4px_rgba(255,255,255,0.8)]');
+                opt.forEach(operator => {
+                    operator.classList.remove('bg-[#1E293B]', 'text-white', 'drop-shadow-[0_5px_5px_rgba(255,255,255,0.1)]');
+                    operator.classList.add('bg-[#F8FAFC]', 'text-[#1E293B]' , 'drop-shadow-[0_5px_5px_rgba(0,0,0,0.1)]', 'hover:bg-[#dfe8f1]');
+                });
+                num.forEach(number => {
+                    number.classList.add('bg-white', 'text-[#1E293B]', 'drop-shadow-[0_5px_5px_rgba(0,0,0,0.1)]','hover:bg-[#dfe8f1]' );
+                    number.classList.remove('bg-[#0F172A]', 'text-white', 'drop-shadow-[0_5px_5px_rgba(255,255,255,0.1)]', 'hover:bg-[#141f38]');
+                });
+            }
+        });
+
+        
+// LTR(Left to Right) & RTL(Right To Left)
+        align.addEventListener('click', ()=>{
+            if(ltr.classList.contains('hidden')){
+                ltr.classList.remove('hidden');
+                rtl.classList.add('hidden');
+
+                col1.classList.remove('order-1');
+                col1.classList.add('order-3');
+                col3.classList.remove('order-3');
+                col3.classList.add('order-1');
+                
+                textbox.classList.remove('text-right');
+                textbox.classList.add('text-left');
+
+                footer.classList.remove('flex-row');
+                footer.classList.add('flex-row-reverse');
+            }
+            else{
+                ltr.classList.add('hidden');
+                rtl.classList.remove('hidden');
+
+                col1.classList.remove('order-3');
+                col1.classList.add('order-1');
+                col3.classList.remove('order-1');
+                col3.classList.add('order-3');
+
+                textbox.classList.add('text-right');
+                textbox.classList.remove('text-left');
+
+                footer.classList.add('flex-row');
+                footer.classList.remove('flex-row-reverse');
+            }
+        });
+
+
+        
+// Calculateor
+        buttons.forEach(btn => {
+            btn.addEventListener('click', ()=>{
+                let innertext =  btn.innerText;
+                if(innertext === 'AC'){
+                    textbox.value = '';
+                }
+                else if(innertext !== '='){
+                    textbox.value += innertext;
+                }
+                else if(innertext === '='){
+                    try{
+                        textbox.value = eval(textbox.value);
+                    }catch (e){
+                        textbox.value= "Error";
+                    }
+                }
+            })
+        });
+           
+        
+    </script>
+</body>
+</html>
