@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-<!--     <link href="./src/output.css" rel="stylesheet"> -->
-     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link href="./src/output.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body{
@@ -72,10 +71,10 @@
             
         </div>
         <div id="footer" class="py-6 text-[#888F9C] bg-[#0F172A] justify-evenly font-bold text-[16px] lg:flex-row flex flex-col px-10 space-y-3 text-center">
-            <div class="w-full">
+            <div id="foot1" class="w-full order-1">
                 <i class="fa-regular fa-copyright"></i> 2025 Calculate. Recreate By <a id="name" href="https://www.linkedin.com/in/amir-javed-a9274b281/" target="_blank" class="transition-all hover:scale-150 inline-block hover:translate-x-10 duration-300 ease-in-out hover:text-[#0A66C2]">Amir Javed Malik <span id="dot">.</span></a>
             </div>
-            <div class="space-x-1 text-[16px] space-y-3 w-full">
+            <div id="foot2" class="space-x-1 text-[16px] space-y-3 w-full order-2">
                 <i class="fa-solid fa-cart-shopping outline-1 outline-[#374151] p-2 rounded-sm hover:bg-[#4c596e]"></i>
                 <i class="fa-solid fa-globe outline-1 outline-[#374151] p-2 rounded-sm hover:bg-[#374151]"></i>
                 <i class="fa-brands fa-linkedin outline-1 outline-[#374151] p-2 rounded-sm hover:bg-[#374151]"></i>
@@ -102,7 +101,9 @@
         let dot = document.getElementById('dot');
         let name = document.getElementById('name');
         let floatingbtn = document.getElementById('floatingbtn');
-        let footer = document.getElementById('footer')
+        let foot1 = document.getElementById('foot1');
+        let foot2 = document.getElementById('foot2');
+
 
         name.addEventListener('mouseenter', ()=>{
             dot.classList.add('hidden');
@@ -182,8 +183,11 @@
                 textbox.classList.remove('text-right');
                 textbox.classList.add('text-left');
 
-                footer.classList.remove('flex-row');
-                footer.classList.add('flex-row-reverse');
+                foot1.classList.remove('order-1');
+                foot1.classList.add('order-2');
+                foot2.classList.remove('order-2');
+                foot2.classList.add('order-1');
+
             }
             else{
                 ltr.classList.add('hidden');
@@ -197,8 +201,10 @@
                 textbox.classList.add('text-right');
                 textbox.classList.remove('text-left');
 
-                footer.classList.add('flex-row');
-                footer.classList.remove('flex-row-reverse');
+                foot1.classList.add('order-1');
+                foot1.classList.remove('order-2');
+                foot2.classList.add('order-2');
+                foot2.classList.remove('order-1');
             }
         });
 
